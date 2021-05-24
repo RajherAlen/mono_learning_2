@@ -32,7 +32,7 @@ module.exports = merge(common, {
 		minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin()],
 	},
 	plugins: [
-		new MiniCssExtractPlugin({ filename: "[main.[contenthash].css" }),
+		new MiniCssExtractPlugin({ filename: "main.[contenthash].css" }),
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
 			template: "./src/template.html",
