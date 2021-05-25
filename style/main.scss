@@ -1,8 +1,11 @@
 // Components
+@import "./variable";
+@import "./colors";
 @import "./nav";
 @import "./icons";
 @import "./button";
 @import "./header";
+@import "./hero";
 
 // fonts
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
@@ -22,10 +25,12 @@ body {
 a {
 	text-decoration: none;
 	color: $color-text-light;
+	opacity: 0.8;
 
-	transition: 0.3s all;
+	transition: 0.1s all;
 
 	&:hover {
-		color: $bg-secondary;
+		opacity: 1;
+		color: $color-text-light;
 	}
 }

@@ -1,0 +1,43 @@
+.c-hero {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	height: 730px;
+
+	margin: 0 auto;
+
+	&__title {
+		font-size: 200px;
+		font-weight: 700;
+	}
+
+	&__actions {
+		display: flex;
+		justify-content: space-between;
+
+		padding-top: 28px;
+	}
+
+	&__links {
+		font-size: 22px;
+		font-weight: 700;
+
+		&:first-child {
+			margin-right: 24px;
+		}
+
+		& a {
+			margin-right: 2px;
+
+			opacity: 1;
+
+			&:hover {
+				color: $color-text-light;
+
+				text-decoration: underline;
+			}
+		}
+	}
+}

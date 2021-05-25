@@ -6,6 +6,8 @@
 	vertical-align: middle;
 	background-size: contain;
 
+	cursor: pointer;
+
 	&--sml {
 		width: 12px;
 		height: 12px;
@@ -27,5 +29,9 @@
 
 	&--basket {
 		background-image: url("../svg/basket.svg");
+	}
+
+	&--play {
+		background-image: url("../svg/play.svg");
 	}
 }
