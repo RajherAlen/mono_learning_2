@@ -7,12 +7,12 @@ module.exports = {
 				use: ["html-loader"],
 			},
 			{
-				test: /\.(png|jpe?g|gif)$/i,
+				test: /\.(png|jpe?g|gif|svg)$/i,
 				use: {
 					loader: "file-loader",
 					options: {
-						name: "[name].[hash].[ext]",
-						outputPath: "/images",
+						name: "img/[name].[ext]",
+						outputPath: "images",
 					},
 				},
 			},

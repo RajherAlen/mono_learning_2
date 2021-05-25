@@ -1,0 +1,52 @@
+.c-btn {
+	display: inline-flex;
+	align-items: center;
+	align-self: center;
+	justify-content: center;
+
+	touch-action: manipulation;
+	user-select: none;
+
+	cursor: pointer;
+	white-space: nowrap;
+	text-decoration: none;
+	text-align: center;
+
+	border: none;
+
+	&:focus {
+		outline: 0;
+	}
+
+	/**
+     * Button base project styling
+    */
+	font-weight: 500;
+	border-radius: 4px;
+	transition: all 300ms;
+
+	&--sml {
+		padding: 6px 16px;
+	}
+
+	&--base {
+		padding: 6px 20px;
+	}
+
+	&--med {
+		padding: 8px 24px;
+	}
+
+	&--primary {
+		background-color: $bg-info;
+		color: $color-text-light;
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+
+	&--rounded {
+		border-radius: 25px;
+	}
+}

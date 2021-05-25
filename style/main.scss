@@ -1,3 +1,31 @@
+// Components
+@import "./nav";
+@import "./icons";
+@import "./button";
+@import "./header";
+
+// fonts
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 body {
-	background-color: #369c92;
+	font-family: "Roboto", sans-serif;
+	background-color: $bg-primary;
+	color: $color-text-light;
+}
+
+a {
+	text-decoration: none;
+	color: $color-text-light;
+
+	transition: 0.3s all;
+
+	&:hover {
+		color: $bg-secondary;
+	}
 }

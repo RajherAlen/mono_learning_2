@@ -2,6 +2,7 @@ const path = require("path");
 const { merge } = require("webpack-merge");
 const common = require("./webpack.common.js");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = merge(common, {
 	mode: "development",
@@ -11,7 +12,7 @@ module.exports = merge(common, {
 				test: /\.s[ac]ss$/i,
 				use: [
 					// 3 - Creates `style` nodes from JS strings
-					"style-loader",
+					MiniCssExtractPlugin.loader,
 					// 2 - Translates CSS into CommonJS
 					"css-loader",
 					// 1 - Compiles Sass to CSS
@@ -27,11 +28,14 @@ module.exports = merge(common, {
 		clean: true,
 	},
 	devServer: {
-		contentBase: "./dist",
+		contentBase: path.join(__dirname, "dist"),
+		port: 8080,
+		open: true,
 	},
 	plugins: [
+		new MiniCssExtractPlugin(),
 		new HtmlWebpackPlugin({
-			template: "./src/template.html",
+			template: "./src/index.html",
 		}),
 	],
 });
