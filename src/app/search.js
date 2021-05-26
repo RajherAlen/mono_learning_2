@@ -1,20 +1,25 @@
-const showModal = document.querySelector(".c-modal");
+const form = document.querySelector(".c-modal--search");
+const searchInput = document.querySelector(".c-modal__input");
+const searchIcon = document.querySelector(".c-modal__icon--search");
+const clearIcon = document.querySelector(".c-modal__icon--clear");
 
-class Search {
-    constructor(isOpen) {
-        this.isOpen = isOpen;
-    }
+searchInput.addEventListener("keyup", function () {
+	if (searchInput.value !== "") {
+		clearIcon.style.display = "block";
+	} else {
+		clearIcon.style.display = "none";
+	}
+});
 
-    searchValue(e) {
-        e.preventDefault();
+searchIcon.addEventListener("click", function () {
+	console.log({ value: searchInput.value });
+});
 
-        console.log(e.target.value);
-    }
+form.addEventListener("submit", function (e) {
+	e.preventDefault();
+	console.log({ value: searchInput.value });
 
-    openModal() {
-        this.isOpen = true;
-        showModal.style.display = "block";
-    }
-}
+	searchInput.value = "";
+});
 
-export default Search;
+export default searchInput;

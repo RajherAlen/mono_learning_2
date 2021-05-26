@@ -1,8 +1,9 @@
 import "../style/main.scss";
-import Search from "./app/search";
+import searchInput from "./app/search";
+import Modal from "./app/modal";
 
 const searchIcon = document.querySelector(".c-nav__search");
-
-const search = new Search(false);
-
-searchIcon.addEventListener("click", search.openModal);
+const exitIcon = document.querySelector(".c-modal__icon--exit");
+const modal = new Modal(false);
+searchIcon.addEventListener("click", modal.openModal);
+exitIcon.addEventListener("click", modal.closeModal);
