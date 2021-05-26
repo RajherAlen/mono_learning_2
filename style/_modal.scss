@@ -1,0 +1,51 @@
+.c-modal {
+    display: none;
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: $bg-primary-08;
+
+    transition: all 0.4s;
+
+    &--search {
+        position: fixed;
+
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__input {
+        width: 300px;
+
+        padding: 8px 12px;
+
+        background-color: transparent;
+        color: $color-text-light;
+        font-size: 16px;
+
+        border: none;
+        border-bottom: 1px solid $color-text-light;
+
+        outline: none;
+    }
+
+    &__icon {
+        &--search {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &--exit {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+    }
+}
