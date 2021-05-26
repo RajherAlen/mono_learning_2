@@ -27,10 +27,10 @@
 			margin-right: 24px;
 		}
 
-		& a {
+		& span {
 			margin-right: 2px;
 
-			opacity: 1;
+			cursor: pointer;
 
 			&:hover {
 				color: $color-text-light;

@@ -3,7 +3,12 @@ const searchInput = document.querySelector(".c-modal__input");
 const searchIcon = document.querySelector(".c-modal__icon--search");
 const clearIcon = document.querySelector(".c-modal__icon--clear");
 
-searchInput.addEventListener("keyup", function () {
+clearIcon.addEventListener("click", () => {
+	searchInput.value = "";
+	clearIcon.style.display = "none";
+});
+
+searchInput.addEventListener("keyup", () => {
 	if (searchInput.value !== "") {
 		clearIcon.style.display = "block";
 	} else {
@@ -11,11 +16,11 @@ searchInput.addEventListener("keyup", function () {
 	}
 });
 
-searchIcon.addEventListener("click", function () {
+searchIcon.addEventListener("click", () => {
 	console.log({ value: searchInput.value });
 });
 
-form.addEventListener("submit", function (e) {
+form.addEventListener("submit", (e) => {
 	e.preventDefault();
 	console.log({ value: searchInput.value });
 
