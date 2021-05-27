@@ -4,8 +4,11 @@ import { validationCard } from "./validation";
 const hideNav = document.querySelector(".c-nav");
 const modalContainer = createSearch();
 const validationMessage = validationCard("Enter some value", "note");
+let modalIsOpen = false;
 
 export const openSearchModal = () => {
+	modalIsOpen = true;
+
 	hideNav.style.visibility = "hidden";
 
 	document.body.appendChild(modalContainer);
@@ -64,4 +67,12 @@ export const openSearchModal = () => {
 export const closeSearchModal = () => {
 	document.body.removeChild(modalContainer);
 	hideNav.style.visibility = "visible";
+
+	modalIsOpen = false;
 };
+
+document.addEventListener("keyup", (e) => {
+	if (e.key === "Escape" && modalIsOpen) {
+		closeSearchModal();
+	}
+});
