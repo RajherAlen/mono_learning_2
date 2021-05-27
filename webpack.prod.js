@@ -35,12 +35,13 @@ module.exports = merge(common, {
 		new MiniCssExtractPlugin({ filename: "main.[contenthash].css" }),
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
-			template: "./src/template.html",
+			filename: "index.html",
+			template: "./src/template/index.html",
 			minify: {
 				removeAttributeQuotes: true,
 				collapseWhitespace: true,
-				removeComments: true;
-			}
+				removeComments: true,
+			},
 		}),
 	],
 });

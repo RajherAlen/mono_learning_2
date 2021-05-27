@@ -1,0 +1,21 @@
+.c-validation {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+
+	display: flex;
+	align-items: center;
+
+	min-width: 100px;
+	min-height: 40px;
+
+	padding: 12px 26px;
+
+	border-radius: 6px;
+	z-index: 100;
+
+	&--note {
+		border: 1px solid $bg-note;
+		color: $bg-note;
+	}
+}

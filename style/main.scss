@@ -1,3 +1,40 @@
+// Components
+@import "./variable";
+@import "./colors";
+@import "./nav";
+@import "./icons";
+@import "./button";
+@import "./header";
+@import "./hero";
+@import "./modal";
+@import "./video";
+@import "./validation";
+
+// fonts
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 body {
-	background-color: #369c92;
+	height: 200vh;
+	font-family: "Roboto", sans-serif;
+	background-color: $bg-primary;
+	color: $color-text-light;
+}
+
+a {
+	text-decoration: none;
+	color: $color-text-light;
+	opacity: 0.8;
+
+	transition: 0.1s all;
+
+	&:hover {
+		opacity: 1;
+		color: $color-text-light;
+	}
 }

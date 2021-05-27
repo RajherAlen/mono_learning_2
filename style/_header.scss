@@ -1,0 +1,70 @@
+.c-header {
+	width: 100%;
+
+	font-size: 12px;
+
+	&__title {
+		font-size: 20px;
+	}
+
+	&--top {
+		width: $container-width;
+		margin: 0 auto;
+
+		&--removed {
+			display: none;
+
+			opacity: 0;
+			transition: 1s all;
+		}
+	}
+
+	&--bottom {
+		width: $container-width;
+		margin: 0 auto;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		padding-bottom: 16px;
+
+		border-bottom: 1px solid $bg-secondary;
+
+		&__actions {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			width: 22%;
+		}
+	}
+
+	&__link {
+		opacity: 1;
+
+		&:hover {
+			color: $bg-info;
+		}
+
+		&.active {
+			opacity: 0.6;
+
+			&:hover {
+				color: $color-text-light;
+			}
+		}
+	}
+
+	&--glass {
+		position: fixed;
+
+		background: rgba(31, 31, 31, 0.5);
+		box-shadow: 0 8px 32px 0 rgba(68, 68, 68, 0.37);
+		backdrop-filter: blur(4px);
+		-webkit-backdrop-filter: blur(4px);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+
+		transition: 0.6s all;
+	}
+}

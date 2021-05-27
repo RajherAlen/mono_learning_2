@@ -1,0 +1,41 @@
+.u-icon {
+	display: inline-block;
+
+	background-repeat: no-repeat;
+	background-position: center center;
+	vertical-align: middle;
+	background-size: contain;
+
+	cursor: pointer;
+
+	&--sml {
+		width: 12px;
+		height: 12px;
+	}
+
+	&--base {
+		width: 16px;
+		height: 16px;
+	}
+
+	&--med {
+		width: 20px;
+		height: 20px;
+	}
+
+	&--search {
+		background-image: url("../svg/search.svg");
+	}
+
+	&--basket {
+		background-image: url("../svg/basket.svg");
+	}
+
+	&--play {
+		background-image: url("../svg/play.svg");
+	}
+
+	&--exit {
+		background-image: url("../svg/exit.svg");
+	}
+}
