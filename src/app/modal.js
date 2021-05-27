@@ -1,7 +1,6 @@
-import { closeModal, openModal } from "./modalOpenClose";
+import { closeModal, openModal } from "./openSearch";
 
 const searchIcon = document.querySelector(".c-nav__search");
-const exitIcon = document.querySelector(".c-modal__icon--exit");
 
 class Modal {
 	constructor() {
@@ -22,12 +21,5 @@ class Modal {
 const modal = new Modal();
 
 searchIcon.addEventListener("click", modal.openModal);
-exitIcon.addEventListener("click", modal.closeModal);
-
-document.addEventListener("keyup", (e) => {
-	if (e.key === "Escape") {
-		modal.closeModal();
-	}
-});
 
 export default Modal;
