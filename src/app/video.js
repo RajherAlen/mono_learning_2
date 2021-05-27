@@ -1,5 +1,5 @@
-const video__product = document.querySelector("#video__product");
-const video__jump = document.querySelector("#video__jump");
+const videoProduct = document.querySelector("#video__product");
+const videoJump = document.querySelector("#video__jump");
 const showModal = document.querySelector(".c-modal");
 
 const playProduct = document.querySelector(".c-video--product");
@@ -17,7 +17,7 @@ const playJumpVideo = () => {
 	playJump.style.display = "block";
 };
 
-video__product.addEventListener("click", playProductVideo);
-video__jump.addEventListener("click", playJumpVideo);
+videoProduct.addEventListener("click", playProductVideo);
+videoJump.addEventListener("click", playJumpVideo);
 
-export default video__product;
+export default videoProduct;

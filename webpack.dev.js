@@ -35,7 +35,7 @@ module.exports = merge(common, {
 	plugins: [
 		new MiniCssExtractPlugin(),
 		new HtmlWebpackPlugin({
-			template: "./src/index.html",
+			template: "./src/template/index.html",
 		}),
 	],
 });
