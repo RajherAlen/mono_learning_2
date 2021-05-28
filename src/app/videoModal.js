@@ -1,14 +1,12 @@
 import { createVideoProduct } from "./createVideoProduct";
 import { createVideoJump } from "./createVideoJump";
 
-const hideNav = document.querySelector(".c-nav");
 const videoProduct = createVideoProduct();
 const videoJump = createVideoJump();
 let modalIsOpen = false;
 
 export const openProductVideo = () => {
 	modalIsOpen = true;
-	hideNav.style.visibility = "hidden";
 
 	document.body.appendChild(videoProduct);
 
@@ -20,14 +18,11 @@ export const openProductVideo = () => {
 const closeProductVideo = () => {
 	document.body.removeChild(videoProduct);
 
-	hideNav.style.visibility = "visible";
-
 	modalIsOpen = false;
 };
 
 export const openJumpVideo = () => {
 	modalIsOpen = true;
-	hideNav.style.visibility = "hidden";
 
 	document.body.appendChild(videoJump);
 
@@ -37,8 +32,6 @@ export const openJumpVideo = () => {
 
 const closeJumpVideo = () => {
 	document.body.removeChild(videoJump);
-
-	hideNav.style.visibility = "visible";
 
 	modalIsOpen = false;
 };
