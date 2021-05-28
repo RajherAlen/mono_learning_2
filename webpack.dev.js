@@ -29,7 +29,7 @@ module.exports = merge(common, {
 	},
 	devServer: {
 		contentBase: path.join(__dirname, "dist"),
-		port: 8080,
+		port: 3000,
 		open: true,
 	},
 	plugins: [

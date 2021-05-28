@@ -1,6 +1,5 @@
-import { closeSearchModal, openSearchModal } from "./searchModal";
-
-const searchIcon = document.querySelector(".c-nav__search");
+import { openSearchModal } from "./searchModal";
+import { openProductVideo, openJumpVideo } from "./videoModal";
 
 class Modal {
 	constructor() {}
@@ -9,13 +8,13 @@ class Modal {
 		openSearchModal();
 	}
 
-	searchModalClose() {
-		closeSearchModal();
+	videoProductModalOpen() {
+		openProductVideo();
+	}
+
+	videoJumpModalOpen() {
+		openJumpVideo();
 	}
 }
-
-const modal = new Modal();
-
-searchIcon.addEventListener("click", modal.searchModalOpen);
 
 export default Modal;

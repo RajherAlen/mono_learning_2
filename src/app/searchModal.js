@@ -3,7 +3,16 @@ import { validationCard } from "./validation";
 
 const hideNav = document.querySelector(".c-nav");
 const modalContainer = createSearch();
+
 const validationMessage = validationCard("Enter some value", "note");
+const validationMessageCard = () => {
+	document.body.appendChild(validationMessage);
+	validationMessage &&
+		setTimeout(() => {
+			document.body.removeChild(validationMessage);
+		}, 3000);
+};
+
 let modalIsOpen = false;
 
 export const openSearchModal = () => {
@@ -40,12 +49,7 @@ export const openSearchModal = () => {
 	searchIcon.addEventListener("click", () => {
 		searchInput.value !== ""
 			? console.log({ value: searchInput.value })
-			: document.body.appendChild(validationMessage);
-
-		validationMessage &&
-			setTimeout(() => {
-				document.body.removeChild(validationMessage);
-			}, 3000);
+			: validationMessageCard();
 	});
 
 	// Submit search on enter
@@ -53,12 +57,7 @@ export const openSearchModal = () => {
 		e.preventDefault();
 		searchInput.value !== ""
 			? console.log({ value: searchInput.value })
-			: document.body.appendChild(validationMessage);
-
-		validationMessage &&
-			setTimeout(() => {
-				document.body.removeChild(validationMessage);
-			}, 3000);
+			: validationMessageCard();
 
 		searchInput.value = "";
 	});
