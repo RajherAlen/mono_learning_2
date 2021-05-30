@@ -4,11 +4,11 @@ import scroll from "./app/scroll";
 
 const modal = new Modal();
 
-const searchIcon = document.querySelector(".c-nav__search");
-searchIcon.addEventListener("click", modal.searchModalOpen);
+const searchIcon = $(".c-nav__search");
+searchIcon.on("click", modal.searchModalOpen);
 
-const productVideo = document.querySelector("#video__product");
-productVideo.addEventListener("click", modal.videoProductModalOpen);
+const productVideo = $("#video__product");
+productVideo.on("click", modal.videoProductModalOpen);
 
-const jumpVideo = document.querySelector("#video__jump");
-jumpVideo.addEventListener("click", modal.videoJumpModalOpen);
+const jumpVideo = $("#video__jump");
+jumpVideo.on("click", modal.videoJumpModalOpen);

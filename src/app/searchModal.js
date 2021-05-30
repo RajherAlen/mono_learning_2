@@ -1,7 +1,7 @@
 import { createSearch } from "./createSearch";
 import { validationCard } from "./validation";
 
-const hideNav = document.querySelector(".c-nav");
+const hideNav = $(".c-nav");
 const modalContainer = createSearch();
 
 const validationMessage = validationCard("Enter some value", "note");
@@ -18,59 +18,60 @@ let modalIsOpen = false;
 export const openSearchModal = () => {
 	modalIsOpen = true;
 
-	hideNav.style.visibility = "hidden";
-
 	document.body.appendChild(modalContainer);
+	hideNav.css("visibility", "hidden");
 
-	const form = document.querySelector(".c-modal--search");
-	const exitIcon = document.querySelector(".c-modal__icon--exit");
-	const searchInput = document.querySelector(".c-modal__input");
-	const searchIcon = document.querySelector(".c-modal__icon--search");
-	const clearIcon = document.querySelector(".c-modal__icon--clear");
+	const form = $(".c-modal--search");
+	const exitIcon = $(".c-modal__icon--exit");
+	const searchInput = $(".c-modal__input");
+	const searchIcon = $(".c-modal__icon--search");
+	const clearIcon = $(".c-modal__icon--clear");
+	let inputValue;
 
-	exitIcon.addEventListener("click", closeSearchModal);
+	exitIcon.on("click", closeSearchModal);
 
 	// show clear icon
-	searchInput.addEventListener("keyup", () => {
-		if (searchInput.value !== "") {
-			clearIcon.style.display = "block";
+	searchInput.on("keyup", () => {
+		inputValue = searchInput.val();
+		if (inputValue !== "") {
+			clearIcon.css("display", "block");
 		} else {
-			clearIcon.style.display = "none";
+			clearIcon.css("display", "none");
 		}
 	});
 
 	// set input value ""
-	clearIcon.addEventListener("click", () => {
-		searchInput.value = "";
-		clearIcon.style.display = "none";
+	clearIcon.on("click", () => {
+		searchInput.val("");
+		clearIcon.css("display", "none");
 	});
 
 	// Submit search on click search icon
-	searchIcon.addEventListener("click", () => {
-		searchInput.value !== ""
-			? console.log({ value: searchInput.value })
+	searchIcon.on("click", () => {
+		inputValue !== ""
+			? console.log({ value: inputValue })
 			: validationMessageCard();
 	});
 
 	// Submit search on enter
-	form.addEventListener("submit", (e) => {
+	form.on("submit", (e) => {
 		e.preventDefault();
-		searchInput.value !== ""
-			? console.log({ value: searchInput.value })
+		inputValue !== ""
+			? console.log({ value: inputValue })
 			: validationMessageCard();
 
-		searchInput.value = "";
+		searchInput.val("");
 	});
 };
 
 export const closeSearchModal = () => {
 	document.body.removeChild(modalContainer);
-	hideNav.style.visibility = "visible";
+	hideNav.css("visibility", "visible");
 
 	modalIsOpen = false;
 };
 
-document.addEventListener("keyup", (e) => {
+$(document).keyup((e) => {
 	if (e.key === "Escape" && modalIsOpen) {
 		closeSearchModal();
 	}
