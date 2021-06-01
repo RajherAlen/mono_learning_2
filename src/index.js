@@ -1,6 +1,6 @@
 import "../style/main.scss";
 import Modal from "./app/modal";
-import scroll from "./app/scroll";
+import scrollNav from "./app/scroll";
 
 const modal = new Modal();
 

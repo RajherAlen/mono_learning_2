@@ -2,6 +2,12 @@ const webpack = require("webpack");
 
 module.exports = {
 	entry: "./src/index.js",
+	plugins: [
+		new webpack.ProvidePlugin({
+			$: "jquery",
+			jQuery: "jquery",
+		}),
+	],
 	module: {
 		rules: [
 			{
@@ -27,10 +33,4 @@ module.exports = {
 			},
 		],
 	},
-	plugins: [
-		new webpack.ProvidePlugin({
-			$: "jquery",
-			jQuery: "jquery",
-		}),
-	],
 };

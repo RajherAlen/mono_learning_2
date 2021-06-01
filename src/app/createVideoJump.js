@@ -1,6 +1,6 @@
 export function createVideoJump() {
-	const modalContainer = document.createElement("div");
-	modalContainer.setAttribute("class", "c-modal");
+	const modalContainer = $(document.createElement("div"));
+	modalContainer.attr("class", "c-modal");
 
 	let newChild = `
         <iframe
@@ -15,7 +15,7 @@ export function createVideoJump() {
         <i class="u-icon u-icon--base u-icon--exit c-modal__icon--exit"></i>
     `;
 
-	modalContainer.innerHTML = newChild;
+	modalContainer.html(newChild);
 
 	return modalContainer;
 }

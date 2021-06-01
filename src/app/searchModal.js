@@ -51,6 +51,7 @@ export const openSearchModal = () => {
 		inputValue !== ""
 			? console.log({ value: inputValue })
 			: validationMessageCard();
+		searchInput.val("");
 	});
 
 	// Submit search on enter

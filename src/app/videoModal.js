@@ -8,15 +8,15 @@ let modalIsOpen = false;
 export const openProductVideo = () => {
 	modalIsOpen = true;
 
-	document.body.appendChild(videoProduct);
+	$(document.body).append(videoProduct);
 
-	const exitIcon = document.querySelector(".c-modal__icon--exit");
-	exitIcon.addEventListener("click", closeProductVideo);
-	console.log();
+	console.log($(document.body).children()[2]);
+	const exitIcon = $(".c-modal__icon--exit");
+	exitIcon.on("click", closeProductVideo);
 };
 
 const closeProductVideo = () => {
-	document.body.removeChild(videoProduct);
+	$(document.body).children()[2].remove();
 
 	modalIsOpen = false;
 };
@@ -24,27 +24,20 @@ const closeProductVideo = () => {
 export const openJumpVideo = () => {
 	modalIsOpen = true;
 
-	document.body.appendChild(videoJump);
+	$(document.body).append(videoJump);
 
-	const exitIcon = document.querySelector(".c-modal__icon--exit");
-	exitIcon.addEventListener("click", closeJumpVideo);
+	const exitIcon = $(".c-modal__icon--exit");
+	exitIcon.on("click", closeJumpVideo);
 };
 
 const closeJumpVideo = () => {
-	document.body.removeChild(videoJump);
+	$(document.body).children()[2].remove();
 
 	modalIsOpen = false;
 };
 
-document.addEventListener("keyup", (e) => {
+$(document).on("keyup", (e) => {
 	if (e.key === "Escape" && modalIsOpen) {
-		if (
-			document.body.children[2].children[0].classList[1] ===
-			"c-video--product"
-		) {
-			closeProductVideo();
-		} else {
-			closeJumpVideo();
-		}
+		$(document.body).children()[2].remove();
 	}
 });
