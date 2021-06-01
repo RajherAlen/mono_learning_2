@@ -48,7 +48,7 @@ export const openSearchModal = () => {
 
 	// Submit search on click search icon
 	searchIcon.on("click", () => {
-		inputValue !== ""
+		searchInput.val() !== ""
 			? console.log({ value: inputValue })
 			: validationMessageCard();
 		searchInput.val("");
@@ -57,7 +57,7 @@ export const openSearchModal = () => {
 	// Submit search on enter
 	form.on("submit", (e) => {
 		e.preventDefault();
-		inputValue !== ""
+		searchInput.val() !== ""
 			? console.log({ value: inputValue })
 			: validationMessageCard();
 
