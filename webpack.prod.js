@@ -9,16 +9,28 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = merge(common, {
 	mode: "production",
+	entry: {
+		index: "./src/index.js",
+		support: "./src/support.js",
+	},
 	output: {
-		filename: "main.[contenthash].js",
+		filename: "[name].[hash:8].js",
 		path: path.resolve(__dirname, "dist"),
 	},
 	module: {
 		rules: [
 			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				loader: "babel-loader",
+				options: {
+					presets: ["@babel/preset-env"],
+				},
+			},
+			{
 				test: /\.s[ac]ss$/i,
 				use: [
-					// 3. extract css into files
+					// 3 - Creates `style` nodes from JS strings
 					MiniCssExtractPlugin.loader,
 					// 2 - Translates CSS into CommonJS
 					"css-loader",
@@ -32,11 +44,24 @@ module.exports = merge(common, {
 		minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin()],
 	},
 	plugins: [
-		new MiniCssExtractPlugin({ filename: "main.[contenthash].css" }),
+		new MiniCssExtractPlugin({ filename: "[name].[contenthash].css" }),
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
 			filename: "index.html",
 			template: "./src/template/index.html",
+			inject: "body",
+			chunks: ["index"],
+			minify: {
+				removeAttributeQuotes: true,
+				collapseWhitespace: true,
+				removeComments: true,
+			},
+		}),
+		new HtmlWebpackPlugin({
+			filename: "support.html",
+			template: "./src/template/support.html",
+			inject: "body",
+			chunks: ["support", "index"],
 			minify: {
 				removeAttributeQuotes: true,
 				collapseWhitespace: true,
