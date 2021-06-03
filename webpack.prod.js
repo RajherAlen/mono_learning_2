@@ -17,29 +17,6 @@ module.exports = merge(common, {
 		filename: "[name].[hash:8].js",
 		path: path.resolve(__dirname, "dist"),
 	},
-	module: {
-		rules: [
-			{
-				test: /\.js$/,
-				exclude: /node_modules/,
-				loader: "babel-loader",
-				options: {
-					presets: ["@babel/preset-env"],
-				},
-			},
-			{
-				test: /\.s[ac]ss$/i,
-				use: [
-					// 3 - Creates `style` nodes from JS strings
-					MiniCssExtractPlugin.loader,
-					// 2 - Translates CSS into CommonJS
-					"css-loader",
-					// 1 - Compiles Sass to CSS
-					"sass-loader",
-				],
-			},
-		],
-	},
 	optimization: {
 		minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin()],
 	},
@@ -49,7 +26,6 @@ module.exports = merge(common, {
 		new HtmlWebpackPlugin({
 			filename: "index.html",
 			template: "./src/template/index.html",
-			inject: "body",
 			chunks: ["index"],
 			minify: {
 				removeAttributeQuotes: true,
@@ -60,7 +36,6 @@ module.exports = merge(common, {
 		new HtmlWebpackPlugin({
 			filename: "support.html",
 			template: "./src/template/support.html",
-			inject: "body",
 			chunks: ["support", "index"],
 			minify: {
 				removeAttributeQuotes: true,

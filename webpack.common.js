@@ -4,10 +4,6 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-	entry: {
-		index: "./src/index.js",
-		support: "./src/support.js",
-	},
 	module: {
 		rules: [
 			{
@@ -44,28 +40,10 @@ module.exports = {
 			},
 		],
 	},
-	output: {
-		filename: "[name].js",
-		path: path.resolve(__dirname, "dist"),
-		publicPath: "/",
-		clean: true,
-	},
 	plugins: [
 		new webpack.ProvidePlugin({
 			$: "jquery",
 			jQuery: "jquery",
-		}),
-		new HtmlWebpackPlugin({
-			template: "./src/template/index.html",
-			inject: true,
-			chunks: ["index"],
-			filename: "index.html",
-		}),
-		new HtmlWebpackPlugin({
-			template: "./src/template/support.html",
-			inject: true,
-			chunks: ["support", "index"],
-			filename: "support.html",
 		}),
 	],
 };
