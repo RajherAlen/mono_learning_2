@@ -59,7 +59,109 @@
 
 		<!-- HERO -->
 		<div class="c-hero">
-			<p class="c-hero__title">Support</p>
+			<p class="c-hero__title c-hero__title--secondary">Support</p>
+		</div>
+
+		<form class="c-form" id="support__form">
+			<div class="c-form__wrapper">
+				<label class="c-form__label" for="name">First name</label>
+				<span
+					class="c-form__message c-form__message--error"
+					id="error__firstName"
+				>
+				</span>
+				<i
+					class="
+						u-icon u-icon--base u-icon--error
+						icon-error__firstName
+					"
+				></i>
+				<input
+					type="text"
+					name="firstName"
+					class="c-form__input"
+					id="support__firstName"
+					placeholder="First name"
+				/>
+			</div>
+
+			<div class="c-form__wrapper">
+				<label class="c-form__label" for="name">Last name</label>
+				<span
+					class="c-form__message c-form__message--error"
+					id="error__lastName"
+				></span>
+				<i
+					class="
+						u-icon u-icon--base u-icon--error
+						icon-error__lastName
+					"
+				></i>
+
+				<input
+					type="text"
+					name="lastName"
+					class="c-form__input"
+					id="support__lastName"
+					placeholder="Last name"
+				/>
+			</div>
+
+			<div class="c-form__wrapper">
+				<label class="c-form__label" for="name">Email</label>
+				<span
+					class="c-form__message c-form__message--error"
+					id="error__email"
+				></span>
+				<i
+					class="u-icon u-icon--base u-icon--error icon-error__email"
+				></i>
+				<input
+					type="email"
+					name="email"
+					class="c-form__input"
+					id="support__email"
+					placeholder="Email"
+				/>
+			</div>
+
+			<div class="c-form__wrapper">
+				<label class="c-form__label">Password</label>
+				<span
+					class="c-form__message c-form__message--error"
+					id="error__password"
+				></span>
+				<i
+					class="
+						u-icon u-icon--base u-icon--error
+						icon-error__password
+					"
+				></i>
+				<input
+					type="password"
+					id="support__password"
+					name="password"
+					class="c-form__input"
+					placeholder="Password"
+				/>
+			</div>
+			<button
+				type="submit"
+				class="c-btn c-btn--full c-btn--primary"
+				id="support__btn"
+			>
+				Submit
+			</button>
+		</form>
+
+		<!-- SPINER  -->
+		<div class="c-modal">
+			<div class="lds-ring">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
 		</div>
 	</body>
 </html>

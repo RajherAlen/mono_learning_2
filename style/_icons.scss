@@ -38,4 +38,16 @@
 	&--exit {
 		background-image: url("../svg/exit.svg");
 	}
+
+	&--error {
+		background-image: url("https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png");
+		position: absolute;
+		right: -30px;
+		top: 25%;
+
+		width: 16px;
+
+		background-repeat: no-repeat;
+		background-position: center;
+	}
 }
