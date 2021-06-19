@@ -9,34 +9,34 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = merge(common, {
 	mode: "production",
-	output: {
-		filename: "main.[contenthash].js",
-		path: path.resolve(__dirname, "dist"),
+	entry: {
+		index: "./src/index.js",
+		support: "./src/support.js",
 	},
-	module: {
-		rules: [
-			{
-				test: /\.s[ac]ss$/i,
-				use: [
-					// 3. extract css into files
-					MiniCssExtractPlugin.loader,
-					// 2 - Translates CSS into CommonJS
-					"css-loader",
-					// 1 - Compiles Sass to CSS
-					"sass-loader",
-				],
-			},
-		],
+	output: {
+		filename: "[name].[hash:8].js",
+		path: path.resolve(__dirname, "dist"),
 	},
 	optimization: {
 		minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin()],
 	},
 	plugins: [
-		new MiniCssExtractPlugin({ filename: "main.[contenthash].css" }),
+		new MiniCssExtractPlugin({ filename: "[name].[contenthash].css" }),
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
 			filename: "index.html",
 			template: "./src/template/index.html",
+			chunks: ["index"],
+			minify: {
+				removeAttributeQuotes: true,
+				collapseWhitespace: true,
+				removeComments: true,
+			},
+		}),
+		new HtmlWebpackPlugin({
+			filename: "support.html",
+			template: "./src/template/support.html",
+			chunks: ["support", "index"],
 			minify: {
 				removeAttributeQuotes: true,
 				collapseWhitespace: true,

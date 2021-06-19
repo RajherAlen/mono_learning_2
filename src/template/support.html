@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Mono learning 2</title>
+	</head>
+	<body>
+		<!--Header-->
+		<header class="c-header">
+			<div class="c-header--top">
+				<nav class="c-nav">
+					<ul class="c-nav__links">
+						<a href="./index.html">
+							<img
+								src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Apple_logo_white.svg/1200px-Apple_logo_white.svg.png"
+								alt="logo"
+								class="c-nav__logo"
+							/>
+						</a>
+						<li class="c-nav__links__item"><a href="">Mac</a></li>
+						<li class="c-nav__links__item"><a href="">iPad</a></li>
+						<li class="c-nav__links__item">
+							<a href="">iPhone</a>
+						</li>
+						<li class="c-nav__links__item"><a href="">Watch</a></li>
+						<li class="c-nav__links__item"><a href="">TV</a></li>
+						<li class="c-nav__links__item"><a href="">Music</a></li>
+						<li class="c-nav__links__item">
+							<a href="./support.html">Support</a>
+						</li>
+
+						<div class="c-nav__search">
+							<i class="u-icon u-icon--med u-icon--search"></i>
+						</div>
+
+						<div class="c-nav__basket">
+							<i class="u-icon u-icon--med u-icon--basket"></i>
+						</div>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="c-header--bottom">
+				<p class="c-header__title">AirPodsPro</p>
+
+				<div class="c-header--bottom__actions">
+					<a href="" class="c-header__link active">Overview</a>
+					<a href="" class="c-header__link">Tech Specs</a>
+					<button
+						class="c-btn c-btn--sml c-btn--primary c-btn--rounded"
+					>
+						Buy
+					</button>
+				</div>
+			</div>
+		</header>
+
+		<!-- HERO -->
+		<div class="c-hero">
+			<p class="c-hero__title c-hero__title--secondary">Support</p>
+		</div>
+
+		<form class="c-form" id="support__form">
+			<div class="c-form__wrapper">
+				<label class="c-form__label" for="name">First name</label>
+				<span
+					class="c-form__message c-form__message--error"
+					id="error__firstName"
+				>
+				</span>
+				<i
+					class="
+						u-icon u-icon--base u-icon--error
+						icon-error__firstName
+					"
+				></i>
+				<input
+					type="text"
+					name="firstName"
+					class="c-form__input"
+					id="support__firstName"
+					placeholder="First name"
+				/>
+			</div>
+
+			<div class="c-form__wrapper">
+				<label class="c-form__label" for="name">Last name</label>
+				<span
+					class="c-form__message c-form__message--error"
+					id="error__lastName"
+				></span>
+				<i
+					class="
+						u-icon u-icon--base u-icon--error
+						icon-error__lastName
+					"
+				></i>
+
+				<input
+					type="text"
+					name="lastName"
+					class="c-form__input"
+					id="support__lastName"
+					placeholder="Last name"
+				/>
+			</div>
+
+			<div class="c-form__wrapper">
+				<label class="c-form__label" for="name">Email</label>
+				<span
+					class="c-form__message c-form__message--error"
+					id="error__email"
+				></span>
+				<i
+					class="u-icon u-icon--base u-icon--error icon-error__email"
+				></i>
+				<input
+					type="email"
+					name="email"
+					class="c-form__input"
+					id="support__email"
+					placeholder="Email"
+				/>
+			</div>
+
+			<div class="c-form__wrapper">
+				<label class="c-form__label">Password</label>
+				<span
+					class="c-form__message c-form__message--error"
+					id="error__password"
+				></span>
+				<i
+					class="
+						u-icon u-icon--base u-icon--error
+						icon-error__password
+					"
+				></i>
+				<input
+					type="password"
+					id="support__password"
+					name="password"
+					class="c-form__input"
+					placeholder="Password"
+				/>
+			</div>
+			<button
+				type="submit"
+				class="c-btn c-btn--full c-btn--primary"
+				id="support__btn"
+			>
+				Submit
+			</button>
+		</form>
+
+		<!-- SPINER  -->
+		<div class="c-modal">
+			<div class="lds-ring">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+	</body>
+</html>

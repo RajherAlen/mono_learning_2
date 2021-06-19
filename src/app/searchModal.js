@@ -6,11 +6,11 @@ const modalContainer = createSearch();
 
 const validationMessage = validationCard("Enter some value", "note");
 const validationMessageCard = () => {
-	document.body.appendChild(validationMessage);
-	validationMessage &&
-		setTimeout(() => {
-			document.body.removeChild(validationMessage);
-		}, 3000);
+	$(document.body).append(validationMessage);
+
+	setTimeout(() => {
+		$(validationMessage).remove();
+	}, 3000);
 };
 
 let modalIsOpen = false;
@@ -18,7 +18,7 @@ let modalIsOpen = false;
 export const openSearchModal = () => {
 	modalIsOpen = true;
 
-	document.body.appendChild(modalContainer);
+	$(document.body).append(modalContainer);
 	hideNav.css("visibility", "hidden");
 
 	const form = $(".c-modal--search");
@@ -66,7 +66,7 @@ export const openSearchModal = () => {
 };
 
 export const closeSearchModal = () => {
-	document.body.removeChild(modalContainer);
+	$(modalContainer).remove();
 	hideNav.css("visibility", "visible");
 
 	modalIsOpen = false;

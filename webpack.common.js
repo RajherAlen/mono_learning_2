@@ -1,15 +1,22 @@
 const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-	entry: "./src/index.js",
-	plugins: [
-		new webpack.ProvidePlugin({
-			$: "jquery",
-			jQuery: "jquery",
-		}),
-	],
 	module: {
 		rules: [
+			{
+				test: /\.s[ac]ss$/i,
+				use: [
+					// 3 - Creates `style` nodes from JS strings
+					MiniCssExtractPlugin.loader,
+					// 2 - Translates CSS into CommonJS
+					"css-loader",
+					// 1 - Compiles Sass to CSS
+					"sass-loader",
+				],
+			},
 			{
 				test: /\.html$/,
 				use: ["html-loader"],
@@ -33,4 +40,10 @@ module.exports = {
 			},
 		],
 	},
+	plugins: [
+		new webpack.ProvidePlugin({
+			$: "jquery",
+			jQuery: "jquery",
+		}),
+	],
 };
